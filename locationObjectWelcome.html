@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta charset="UTF-8" />
+  <title>Welcome</title>
+  <link rel="stylesheet" href="locationObjectWelcome.css">
 </head>
-
 <body>
-  
-</body>
+  <h1>Welcome our user!</h1>
+  <div id="userInfo">
+  </div>
 
+  <script>
+    let userInfoDiv = document.getElementById("userInfo");
+    let formData = JSON.parse(localStorage.getItem("formData"));
+
+    if (formData) {
+        userInfoDiv.innerHTML = `
+        <h2>here is your details</h2>
+          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone}</p>
+          <p><strong>Address:</strong> ${formData.address}</p>
+          <p><strong>Job Title:</strong> ${formData.jobTitle}</p>
+          <p><strong>Gender:</strong> ${formData.gender}</p>
+        `;
+    } else {
+        userInfoDiv.textContent = "No user data found.";
+    }
+    window.addEventListener("popstate", function () {
+  history.pushState(null, "", location.href);
+});
+history.pushState(null, "", location.href);
+  </script>
+</body>
 </html>

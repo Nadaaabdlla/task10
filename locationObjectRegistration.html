@@ -5,9 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
+<link rel="stylesheet" href="locationObjectRegistration.css">
+<script src="locationObjectRegistration.js" defer></script>
 </head>
 
 <body>
+  <p id="countdown"></p>
+  <form action="">
+    <h2>Registration</h2>
+    <input type="text" id="name" placeholder="Enter your first name" required>
+    <input type="email" id="email" placeholder="example@gmail.com" required>
+    <input type="tel" name="Phone Number" pattern="[0-9]{11}" required placeholder="Phone Number">
+    <input type="password" placeholder="Enter a password" required>
+    <input type="text" placeholder="Enter your address" required>
+    <input type="text" placeholder="Enter your job title" required>
+<div>
+ <input type="radio" name="gender" class="radio" id="radio1" value=""required><label for="radio1">Male</label>
+  <input type="radio" name="gender" class="radio" id="radio2" value=""required><label for="radio2">Female</label>
+</div> 
+    <input id="submit" type="submit">
+  </form>
   
 </body>
 
