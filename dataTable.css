@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+#name,#age,#email,label,form{
+padding: 5px;
+text-align: center;
+margin: 40px auto;
+}
+#name,#age,#email{
+border-radius: 8px;
+border: 2px solid rgb(202, 202, 202);
+
+}
+form{
+    background-color: rgba(0, 119, 255, 0.137);
+    border-radius: 10px;
+    border: 2px solid;
+    width: 80%;
+}
+button{
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+#addBtn{
+    border: none;
+    background-color: rgb(73, 202, 47);
+    color: white;
+}
+#addBtn:hover{
+    background-color: green;
+}
+#resetBtn{
+    border: none;
+    color: white;
+    background-color: rgb(247, 73, 73);
+}
+#resetBtn:hover{
+    background-color: rgb(197, 5, 5);
+}
+table{
+    border: 2px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+    margin: 100px auto 20px;
+    width: 80%;
+
+}
+th,td{
+    padding: 15px;
+    border: 2px solid rgb(0, 0, 0);
+
+}
