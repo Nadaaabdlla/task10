@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ASCII</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    textarea{
-      display: inline-block;
-      border: 2px solid gray;
-      margin:50px auto;
-      border-radius: 20px;
+    h1,p{
       text-align: center;
-      padding: 20px;
     }
   </style>
 </head>
 <body>
-  <textarea rows="8" cols="40" placeholder="Write something..."></textarea>
-  <script>
-    let textarea = document.querySelector("textarea");
+  <h1>Did you see the window?</h1>
 
-    document.addEventListener("contextmenu", function(event) {
-      event.preventDefault();
-      // alert("ايدك من على الزرار لتوحشك 🔪");
-    });
+  <script defer>
+function openPopup() {
+  const width = 400;
+  const height = 300;
+  const left = (window.screen.width / 2) - (width / 2);
+  const top = (window.screen.height / 2) - (height / 2);
+  const popupFeatures = `width=${width},height=${height},left=${left},top=${top}`;
+  const popupWindow = window.open("", "_blank", popupFeatures);
 
-    textarea.addEventListener("keydown", function(key) {
-      let ASCII=key.code.toString().charCodeAt(0);
-      console.log(`The pressed key is ${key.code} and its ASCII is ${ASCII}`);
-    });
-  </script>
+  if (!popupWindow) {
+    alert("Please allow pop-ups for this site.");
+    return;
+  }
+  popupWindow.document.write("<h1>pop-up page</h1>");
+  popupWindow.document.write("<p>This window will close after 5 seconds.</p>");
+  const closeTime = 5000;
+  setTimeout(function() {
+    popupWindow.close();
+  }, 5000);
+}
+openPopup();
+</script>
 </body>
 </html>

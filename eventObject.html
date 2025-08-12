@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>ASCII</title>
+  <style>
+    textarea{
+      display: block;
+      border: 2px solid gray;
+      margin:50px auto;
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
-
 <body>
-  
-</body>
+  <textarea rows="8" cols="40" placeholder="Write something..."></textarea>
+  <script>
+    let textarea = document.querySelector("textarea");
 
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault();
+       alert("ايدك من على الزرار لتوحشك 🔪");
+    });
+
+    textarea.addEventListener("keydown", function(pressedKey) {
+      console.log(`The pressed key is ${pressedKey.code} and its ASCII is ${pressedKey.key.charCodeAt()}`);
+    });
+  </script>
+</body>
 </html>
